@@ -208,7 +208,7 @@ header .container {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('img/Captura\ de\ tela\ 2025-07-14\ 182429.png') no-repeat center center;
+    background: url('./img/Captura de tela 2025-07-14 182429.png') no-repeat center center;
     background-position: center;
     background-size: cover;
     position: relative;
