@@ -18,38 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
     
     // Header scroll effect
-   const header = document.getElementById('header');
-const backToTop = document.querySelector('.back-to-top');
-const logoContainer = document.querySelector('.logo');
-const logoText = document.querySelectorAll('.logo h1, .logo p');
+   // Get the header element
+const header = document.querySelector('header');
 
-// Hide logo text initially when the page loads
-logoText.forEach(element => {
-    element.style.opacity = '0';
-    element.style.visibility = 'hidden';
-});
-      
+// Initially make header transparent but visible
+header.style.opacity = '0';
+header.style.transform = 'translateY(-20px)';
+header.style.transition = 'all 2s ease';
+
 window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
         header.classList.add('scrolled');
-        backToTop.classList.add('visible');
-        // Show the logo text
-        logoText.forEach(element => {
-            element.style.opacity = '1';
-            element.style.visibility = 'visible';
-        });
+        header.style.opacity = '1';
+        header.style.transform = 'translateY(0)';
     } else {
         header.classList.remove('scrolled');
-        backToTop.classList.remove('visible');
-        // Hide only the logo text, not the container
-        logoText.forEach(element => {
-            element.style.opacity = '0';
-            element.style.visibility = 'hidden';
-        });
+        header.style.opacity = '0';
+        header.style.transform = 'translateY(-20px)';
     }
 });
 
-    
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
